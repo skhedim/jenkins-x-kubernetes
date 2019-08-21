@@ -22,7 +22,5 @@ preview:
     pullPolicy: IfNotPresent
     args: ["-c", "pulumi preview --stack dev --non-interactive"]
   env:
-  - name: PULUMI_ACCESS_TOKEN
-    value: my_token
-  - name: GOOGLE_CREDENTIALS
-    value: my_token
+    PULUMI_ACCESS_TOKEN: pul-f270c467548ca7af8bca583cabf367033e34d850
+    GOOGLE_CREDENTIALS: mytoken
