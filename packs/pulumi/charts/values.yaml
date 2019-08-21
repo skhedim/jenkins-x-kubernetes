@@ -11,7 +11,7 @@ image:
 # define environment variables here as a map of key: value
 env:
   - name: PULUMI_ACCESS_TOKEN
-    value: pul-f270c467548ca7af8bca583cabf367033e34d850
+    value: mytoken
   - name: GOOGLE_CREDENTIALS
     value: mytoken
 # enable this flag to use knative serve to deploy the app
