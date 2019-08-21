@@ -20,3 +20,9 @@ preview:
     repository:
     tag:
     pullPolicy: IfNotPresent
+    args: ["-c", "pulumi preview --stack dev --non-interactive"]
+  env:
+  - name: PULUMI_ACCESS_TOKEN
+    value: my_token
+  - name: GOOGLE_CREDENTIALS
+    value: my_token

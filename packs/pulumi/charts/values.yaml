@@ -6,21 +6,17 @@ image:
   repository: draft
   tag: dev
   pullPolicy: IfNotPresent
+  args: ["-c", "pulumi preview --stack dev --non-interactive"]
 
 # define environment variables here as a map of key: value
 env:
-
+  - name: PULUMI_ACCESS_TOKEN
+    value: pul-f270c467548ca7af8bca583cabf367033e34d850
+  - name: GOOGLE_CREDENTIALS
+    value: mytoken
 # enable this flag to use knative serve to deploy the app
 knativeDeploy: false
 
-service:
-  name: REPLACE_ME_APP_NAME
-  type: ClusterIP
-  externalPort: 80
-  internalPort: 8080
-  annotations:
-    fabric8.io/expose: "true"
-    fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
 resources:
   limits:
     cpu: 100m
@@ -28,16 +24,4 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
-ingress:
-  enabled: false
-probePath: /
-livenessProbe:
-  initialDelaySeconds: 60
-  periodSeconds: 10
-  successThreshold: 1
-  timeoutSeconds: 1
-readinessProbe:
-  periodSeconds: 10
-  successThreshold: 1
-  timeoutSeconds: 1
-terminationGracePeriodSeconds: 10
+
